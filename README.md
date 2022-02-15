@@ -10,6 +10,11 @@ Shopping cart demo
 # Run Locally
 1. Compile : mvn install
 2. Run :  mvn spring-boot:run
+3. Verify (by visiting following)
+   1. http://localhost:8080/v2/api-docs
+   2. http://localhost:8080/swagger-ui.html
+
+# Test using examples
 
 
 
