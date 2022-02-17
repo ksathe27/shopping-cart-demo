@@ -1,20 +1,17 @@
 package com.ksathe.shoppingcartdemo;
 
 import com.ksathe.shoppingcartdemo.dto.PriceInfo;
-
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.buildPriceInfoInputSet1;
 import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.testSet1;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ShoppingCartControllerTest {

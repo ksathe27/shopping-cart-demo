@@ -1,18 +1,17 @@
 package com.ksathe.shoppingcartdemo;
 
 import com.ksathe.shoppingcartdemo.dto.PriceInfo;
-import com.ksathe.shoppingcartdemo.dto.PriceInfoInput;
 import com.ksathe.shoppingcartdemo.dto.ShoppingCartPriceDetails;
 import org.junit.jupiter.api.Test;
 
-import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CartScannerServiceTest {
     CartScannerService service = new CartScannerService();

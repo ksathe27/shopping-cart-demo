@@ -4,7 +4,7 @@ import java.math.RoundingMode;
 
 public class PriceInfo {
     private final int SCALE = 4;
-    private final RoundingMode ROUNDING_MODE = RoundingMode.HALF_EVEN;
+    private final RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
     private final Character productCode;
     private final BigDecimal noOfUnits;
     private final BigDecimal totalPrice;
