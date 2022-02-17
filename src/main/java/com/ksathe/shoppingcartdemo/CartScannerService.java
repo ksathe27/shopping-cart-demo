@@ -46,10 +46,13 @@ public class CartScannerService {
     public void updatePriceInfoMap(final List<PriceInfoInput> input) {
         priceInfoMap.clear();
         input.forEach( rec -> {
-            PriceInfo info = new PriceInfo(rec.getItemCode(), rec.getPrice(), rec.getQuantity());
-            List<PriceInfo> curr = priceInfoMap.getOrDefault(rec.getItemCode(), new ArrayList<>());
-            curr.add(info);
-            priceInfoMap.put(rec.getItemCode(), curr);
+            BigDecimal quantity = new BigDecimal(rec.getQuantity());
+            if (quantity.compareTo(new BigDecimal("0")) != 0) {
+                PriceInfo info = new PriceInfo(rec.getItemCode(), rec.getPrice(), rec.getQuantity());
+                List<PriceInfo> curr = priceInfoMap.getOrDefault(rec.getItemCode(), new ArrayList<>());
+                curr.add(info);
+                priceInfoMap.put(rec.getItemCode(), curr);
+            }
         });
         priceInfoMap.values().forEach( priceInfos -> priceInfos.sort(Comparator.comparing(PriceInfo::getPricePerUnit)));
     }
