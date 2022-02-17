@@ -38,7 +38,7 @@ Mac OS, apache mvn 3.8.4, Java 11, Intelij 2021.3.2
   { "itemCode" : "A", "price" : "3", "quantity" : 3 },
   { "itemCode" : "B", "price" : "4.25", "quantity" : 1 },
   { "itemCode" : "C", "price" : "1", "quantity" : 1 },
-  { "itemCode" : "C", "price" : "5.00", "quantity" : 6 },
+  { "itemCode" : "C", "price" : "5", "quantity" : 6 },
   { "itemCode" : "D", "price" : "0.75", "quantity" : 1 }
 ]
 ```

@@ -5,17 +5,17 @@ import java.util.List;
 
 public class ShoppingCartPriceDetails {
 
-    final List<Character> cartItemCodes;
+    final String cartItemCodes;
     final BigDecimal totalAmount;
     final String currency;
 
-    public ShoppingCartPriceDetails(List<Character> codes, BigDecimal amount, String curr) {
+    public ShoppingCartPriceDetails(String codes, BigDecimal amount, String curr) {
         cartItemCodes = codes;
         totalAmount = amount;
         currency = curr;
     }
 
-    public List<Character> getCartItemCodes() {
+    public String getCartItemCodes() {
         return cartItemCodes;
     }
 

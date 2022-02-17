@@ -5,15 +5,9 @@ public class PriceInfoInput {
     String price;
     String quantity;
 
-    public void setItemCode(Character itemCode) {
+    public PriceInfoInput(Character itemCode, String price, String quantity) {
         this.itemCode = itemCode;
-    }
-
-    public void setPrice(String price) {
         this.price = price;
-    }
-
-    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 

@@ -32,4 +32,15 @@ public class PriceInfo {
         noOfUnits = new BigDecimal(units);
         pricePerUnit = totalPrice.divide(noOfUnits, SCALE, ROUNDING_MODE);
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null) return false;
+        if (getClass() != other.getClass()) return false;
+        PriceInfo obj = (PriceInfo) other;
+        return this.getNoOfUnits().equals(obj.getNoOfUnits())
+                && this.getTotalPrice().compareTo(obj.getTotalPrice()) == 0
+                && this.getProductCode().compareTo(obj.getProductCode()) == 0;
+    }
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CartScannerService {
@@ -43,7 +44,8 @@ public class CartScannerService {
         for(Map.Entry<Character, Integer> codeByCount : inputMap.entrySet()) {
             sum = sum.add(calculateForCode(codeByCount));
         }
-         return new ShoppingCartPriceDetails(allItems, sum, "USD");
+        String allItemsAsString = allItems.stream().map(String::valueOf).collect(Collectors.joining());
+        return new ShoppingCartPriceDetails(allItemsAsString, sum, "USD");
     }
 
     private void add(Character input) {

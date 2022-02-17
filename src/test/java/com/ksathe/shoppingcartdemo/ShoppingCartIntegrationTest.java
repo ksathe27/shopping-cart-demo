@@ -21,4 +21,11 @@ public class ShoppingCartIntegrationTest {
         assertEquals("ShoppingCartController",
                 testRestTemplate.getForObject("http://localhost:" + port + "/api/shopping-cart-demo", String.class));
     }
+
+    //test for put getinfo
+
+    //test for get getinfo (after put)
+
+    // test for empty getinfo
+
 }
