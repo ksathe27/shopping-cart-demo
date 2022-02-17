@@ -19,15 +19,15 @@ Mac OS, apache mvn 3.8.4, Java 11, Intelij 2021.3.2
 
 # Test using examples
 1. Input for priceinfo
-    [ { "itemCode" : "A", "price" : "1.25", "quantity" : 1 },
-      { "itemCode" : "A", "price" : "3", "quantity" : 3 },
-      { "itemCode" : "B", "price" : "4.25", "quantity" : 1 },
-      { "itemCode" : "C", "price" : "1", "quantity" : 1 },
-      { "itemCode" : "C", "price" : "5.00", "quantity" : 6 },
-      { "itemCode" : "D", "price" : "0.75", "quantity" : 1 }
-    ]
+[ { "itemCode" : "A", "price" : "1.25", "quantity" : 1 },
+  { "itemCode" : "A", "price" : "3", "quantity" : 3 },
+  { "itemCode" : "B", "price" : "4.25", "quantity" : 1 },
+  { "itemCode" : "C", "price" : "1", "quantity" : 1 },
+  { "itemCode" : "C", "price" : "5.00", "quantity" : 6 },
+  { "itemCode" : "D", "price" : "0.75", "quantity" : 1 }
+]
 
-2. Cart service input
-
+2. Cart service calculate
+     http://localhost:8080/api/calculate?itemsByCode=AAAA"
 
 
