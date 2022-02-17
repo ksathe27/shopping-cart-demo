@@ -5,8 +5,7 @@ import com.ksathe.shoppingcartdemo.dto.PriceInfoInput;
 import com.ksathe.shoppingcartdemo.dto.ShoppingCartPriceDetails;
 import org.junit.jupiter.api.Test;
 
-import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.buildPriceInfoInputSet1;
-import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.buildPriceInfoInputSet2;
+import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
@@ -76,16 +75,6 @@ public class CartScannerServiceTest {
         assertEquals(input1, result1.getCartItemCodes());
         assertEquals(0, expected1.compareTo(result1.getTotalAmount()));
         assertEquals("USD", result1.getCurrency());
-    }
-
-    private void testSet1(Map<Character, List<PriceInfo>> result) {
-        Arrays.asList('A', 'B', 'C', 'D').forEach(priceCode -> assertTrue(result.containsKey(priceCode)));
-        assertTrue(result.get('A').contains(new PriceInfo('A', "1.25", "1")));
-        assertTrue(result.get('A').contains(new PriceInfo('A', "3", "3")));
-        assertTrue(result.get('B').contains(new PriceInfo('B', "4.25", "1")));
-        assertTrue(result.get('C').contains(new PriceInfo('C', "1", "1")));
-        assertTrue(result.get('C').contains(new PriceInfo('C', "5.0", "6")));
-        assertTrue(result.get('D').contains(new PriceInfo('D', "0.75", "1")));
     }
 
     private List<Character> convertToCharList(String input) {

@@ -19,6 +19,10 @@ public class ShoppingCartController {
     @Autowired
     CartScannerService cartScannerService;
 
+    public void setCartScannerService(CartScannerService cartScannerService) {
+        this.cartScannerService = cartScannerService;
+    }
+
     @GetMapping("/shopping-cart-demo")
     public String ShoppingCartDemo() {
         return "ShoppingCartController";

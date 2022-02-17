@@ -1,37 +1,49 @@
 package com.ksathe.shoppingcartdemo;
 
 import com.ksathe.shoppingcartdemo.dto.PriceInfo;
-import com.ksathe.shoppingcartdemo.dto.PriceInfoInput;
+
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.buildPriceInfoInputSet1;
+import static com.ksathe.shoppingcartdemo.ShoppingCartHelperFunctions.testSet1;
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ShoppingCartControllerTest {
-    ShoppingCartController controller = new ShoppingCartController();
+    CartScannerService cartScannerService;
+    ShoppingCartController controller;
+
+    @BeforeAll
+    public void init() {
+        cartScannerService = new CartScannerService();
+        controller = new ShoppingCartController();
+        controller.setCartScannerService(cartScannerService);
+    }
 
     @Test
-    void shoppingCartDemo() {
+    public void shoppingCartDemo() {
         String result = controller.ShoppingCartDemo();
         //assert
         assertEquals(result, "ShoppingCartController");
     }
 
     @Test
-    void getCurrPriceInfo() {
+    public void getCurrPriceInfo() {
         //
         Map<Character, List<PriceInfo>>  result = controller.updateCurrPriceInfo(buildPriceInfoInputSet1());
         // get etmpy price info
-        assertTrue(result.isEmpty());
+        assertFalse(result.isEmpty());
+        testSet1(result);
     }
 
     // get and update priceinfo
-
-
-    // empty shopping cart returns 0
 
 }
