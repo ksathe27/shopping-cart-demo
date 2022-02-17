@@ -1,10 +1,15 @@
-package com.ksathe.shoppingcartdemo;
+package com.ksathe.shoppingcartdemo.dto;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class PriceInfo {
     private final int SCALE = 4;
     private final RoundingMode ROUNDING_MODE = RoundingMode.HALF_EVEN;
+    private final Character productCode;
+    private final BigDecimal noOfUnits;
+    private final BigDecimal totalPrice;
+    private final BigDecimal pricePerUnit;
+
     public Character getProductCode() {
         return productCode;
     }
@@ -21,15 +26,10 @@ public class PriceInfo {
         return pricePerUnit;
     }
 
-    private final Character productCode;
-    private final BigDecimal noOfUnits;
-    private final BigDecimal totalPrice;
-    private final BigDecimal pricePerUnit;
-
-    public PriceInfo(Character code, String units, String price) {
+    public PriceInfo(Character code, String price, String units) {
         productCode = code;
-        noOfUnits = new BigDecimal(units);
         totalPrice = new BigDecimal(price);
+        noOfUnits = new BigDecimal(units);
         pricePerUnit = totalPrice.divide(noOfUnits, SCALE, ROUNDING_MODE);
     }
 }
